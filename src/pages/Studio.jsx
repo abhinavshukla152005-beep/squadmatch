@@ -49,16 +49,18 @@ export default function Studio() {
 
   useEffect(() => {
     if (!profile) return;
-    setForm((f) => ({
-      ...f,
-      name: profile.name ?? '',
-      role: profile.role ?? '',
-      year: profile.year ?? '',
-      skills: profile.skills ?? [],
-      idea: profile.idea ?? '',
-      needs: profile.needs ?? [],
-      slots: profile.slots ?? [],
-    }));
+    // Only non-empty database values win, so a freshly triggered (blank) profile
+    // never discards what the student just typed.
+    setForm((f) => {
+      const saved = {};
+      for (const key of ['name', 'role', 'year', 'idea', 'tagline']) {
+        if (profile[key]) saved[key] = profile[key];
+      }
+      for (const key of ['skills', 'needs', 'slots']) {
+        if (profile[key]?.length) saved[key] = profile[key];
+      }
+      return { ...f, ...saved };
+    });
   }, [profile?.id]);
 
   useEffect(() => {
