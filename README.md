@@ -19,12 +19,12 @@ npm run dev      # http://localhost:5173
 npm run build    # static bundle in dist/
 ```
 
-`.env` already points at project `rfvjxirjnzhwwpghjetg` with the publishable key (that key is
+`.env` already points at project `fwmgpirjwhevifzzjghx` with the publishable key (that key is
 public-by-design; the browser never sees a secret).
 
 ## One-time Supabase setup (required before saving works)
 
-1. Supabase dashboard → project `rfvjxirjnzhwwpghjetg` → **SQL Editor** → *New query*.
+1. Supabase dashboard → project `fwmgpirjwhevifzzjghx` → **SQL Editor** → *New query*.
 2. Paste the whole contents of [`db/schema.sql`](db/schema.sql) → **Run**.
 3. Done. The file is idempotent — re-run it any time the schema changes.
 

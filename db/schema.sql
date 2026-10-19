@@ -1,6 +1,6 @@
 -- ============================================================================
 -- SquadMatch — Supabase schema
--- Project: rfvjxirjnzhwwpghjetg
+-- Project: fwmgpirjwhevifzzjghx
 --
 -- HOW TO RUN
 --   Supabase dashboard → your project → SQL Editor → New query → paste all of
